@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DinoRun.Core;
 
-public class Parallax : MonoBehaviour
+namespace DinoRun.VisualEffects
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Parallax : MonoBehaviour
     {
-        
-    }
+        Material material;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake() => material = GetComponent<SpriteRenderer>().material;
+
+        private void FixedUpdate()
+        {
+            Vector2 offset = Vector3.right * SpeedHandler.globalSpeed * Time.fixedDeltaTime;
+            material.mainTextureOffset += offset;
+        }
     }
 }
