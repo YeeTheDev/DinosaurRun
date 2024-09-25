@@ -10,19 +10,18 @@ namespace DinoRun.Scores
 
         [Min(0)] [SerializeField] float timeToIncrease;
         [SerializeField] int pointPerTime;
+        [SerializeField] GameObject gameOverPanel;
 
         int score;
         float timer;
         Character character;
 
-        private void Awake()
+        public void SetEvent(Character character)
         {
+            this.character = character;
+            character.OnGameOver += SaveHiScore;
             timer = Time.time + timeToIncrease;
-            character = FindAnyObjectByType<Character>();
         }
-
-        private void OnEnable() => character.OnGameOver += SaveHiScore;
-        private void OnDisable() => character.OnGameOver -= SaveHiScore;
 
         private void Update()
         {
@@ -38,6 +37,8 @@ namespace DinoRun.Scores
         private void SaveHiScore()
         {
             if (PlayerPrefs.GetInt("HiScore") < score) { PlayerPrefs.SetInt("HiScore", score); }
+
+            gameOverPanel.SetActive(true);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace DinoRun.UI
     {
         [SerializeField] Text scoreText;
         [SerializeField] Text hiScoreText;
+        [SerializeField] GameObject gameOverPanel;
 
         Score score;
 
