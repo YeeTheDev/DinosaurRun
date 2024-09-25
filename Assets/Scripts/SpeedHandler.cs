@@ -11,6 +11,7 @@ namespace DinoRun.Core
         [SerializeField] float maxSpeed = 10f;
 
         float timer = 1;
+        float debug;
 
         private void Awake() => globalSpeed = startingSpeed;
 
@@ -20,6 +21,7 @@ namespace DinoRun.Core
             {
                 timer = Time.timeSinceLevelLoad + 1;
                 globalSpeed = Mathf.Clamp(globalSpeed + speedPerSecond, startingSpeed, maxSpeed);
+                debug = globalSpeed;
             }
         }
     }
