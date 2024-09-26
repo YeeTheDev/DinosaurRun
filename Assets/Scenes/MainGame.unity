@@ -425,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 664964443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: -1.25, z: -1}
+  m_LocalPosition: {x: 20, y: -2, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,7 +446,10 @@ MonoBehaviour:
   spawnRate: 2.5
   spawnRandomizer: 0.5
   decreaseMultiplier: 0.3
-  spawnableObjects: {fileID: 951857096055573896, guid: 8e8b43fb8114b4a459283ead2da95e46, type: 3}
+  spawnableObjects:
+  - {fileID: 951857096055573896, guid: 8e8b43fb8114b4a459283ead2da95e46, type: 3}
+  - {fileID: 2583840395014766539, guid: 271144b964172493bb335915b640734b, type: 3}
+  - {fileID: 5832812195028744224, guid: e3ee9f645a17547e9bd25b66b5b780c5, type: 3}
 --- !u!1 &674867220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,10 +1634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1264, y: 400}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

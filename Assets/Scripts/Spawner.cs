@@ -9,7 +9,7 @@ namespace DinoRun.Core
         [SerializeField] float spawnRate = 2.5f;
         [SerializeField] float spawnRandomizer = 0.25f;
         [SerializeField] float decreaseMultiplier = 0.2f;
-        [SerializeField] GameObject spawnableObjects;
+        [SerializeField] GameObject[] spawnableObjects;
 
         float timer;
 
@@ -22,7 +22,7 @@ namespace DinoRun.Core
                 float spawnTime = spawnRate + Random.Range(-spawnRandomizer, spawnRandomizer)
                     - SpeedHandler.globalSpeed * decreaseMultiplier;
                 timer = Time.timeSinceLevelLoad + spawnTime;
-                Instantiate(spawnableObjects, transform.position, Quaternion.identity);
+                Instantiate(spawnableObjects[Random.Range(0, spawnableObjects.Length - 1)], transform.position, Quaternion.identity);
             }
         }
     }
